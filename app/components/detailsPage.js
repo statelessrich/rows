@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import usePlanetDetails from "../hooks/usePlanetDetails";
 import { formatNumber } from "../utilities/utilities";
+import Loading from "./loading";
 
 /**
  *
@@ -25,15 +26,15 @@ export default function DetailsPage({ id }) {
 					← Back
 				</button>
 
-				{/* Spinner overlay */}
-				{isLoading && (
-					<div className="inset-0 opacity-80 flex items-center justify-center rounded-lg z-10">
-						<div className="w-10 h-10 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin"></div>
-					</div>
+				{/* loading */}
+				{isLoading && <Loading />}
+
+				{/* no data */}
+				{!isLoading && !details && (
+					<div className="text-yellow-500">No details found.</div>
 				)}
 
-				{!isLoading && !details && <div>No details found.</div>}
-
+				{/* error */}
 				{error && <div>Error loading planet details.</div>}
 
 				{details && (

@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased `}
 			>
-				<div className="bg-gray-500 pt-40 min-h-screen">
+				<div className="bg-gray-500 pt-40 min-h-screen pb-50">
 					<h1 className="text-5xl text-center text-yellow-200">
 						Planets of Star Wars
 					</h1>
