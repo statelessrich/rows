@@ -1,0 +1,12 @@
+{
+	"linter": {
+		"rules": {
+			"style": {
+				"useNamingConvention": "off"
+			},
+			"suspicious": {
+				"noGlobalIsNan": "off"
+			}
+		}
+	}
+}

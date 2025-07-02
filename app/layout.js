@@ -20,9 +20,14 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+				className={`${geistSans.variable} ${geistMono.variable} antialiased `}
 			>
-				{children}
+				<div className="bg-gray-500 pt-40 min-h-screen">
+					<h1 className="text-5xl text-center text-yellow-200">
+						Planets of Star Wars
+					</h1>
+					{children}
+				</div>
 			</body>
 		</html>
 	);
