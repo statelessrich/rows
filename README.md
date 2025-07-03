@@ -7,9 +7,5 @@ ROWS reactjs challenge
 4. click on a planet to see its details
 5. click on the back button to return to the list of planets
 
-made with:
-nextjs
-tailwindcss
-swr
-biome
+Made with nextjs, tailwindcss, swr, biome
 
