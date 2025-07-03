@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import usePlanetDetails from "../hooks/usePlanetDetails";
 import { formatNumber } from "../utilities/utilities";
 import Loading from "./loading";
@@ -8,7 +9,7 @@ import Loading from "./loading";
  * Displays basic planet details from a given url
  *
  */
-export default function Planet({ url }) {
+function Planet({ url }) {
 	const { details, isLoading, error } = usePlanetDetails(url);
 
 	return (
@@ -29,3 +30,5 @@ export default function Planet({ url }) {
 		</ul>
 	);
 }
+
+export default React.memo(Planet);

@@ -35,7 +35,9 @@ export default function DetailsPage({ id }) {
 				)}
 
 				{/* error */}
-				{error && <div>Error loading planet details.</div>}
+				{error && (
+					<div className="text-yellow-500">Error loading planet details.</div>
+				)}
 
 				{details && (
 					<>

@@ -14,6 +14,7 @@ export default function PlanetList() {
 	const router = useRouter();
 	const [selectedId, setSelectedId] = useState(null);
 
+	// route to planet details page on click
 	const handleCardClick = useCallback(
 		(uid) => {
 			setSelectedId(uid);
@@ -39,16 +40,11 @@ export default function PlanetList() {
 
 					{/* list of planets */}
 					{planets?.results.map((planet) => (
+						// biome-ignore lint/a11y/useKeyWithClickEvents: <>
 						<li
 							key={planet.name}
 							className="bg-gray-100 rounded-lg p-6 shadow hover:bg-blue-100 hover:shadow-lg transition cursor-pointer max-w-sm relative"
-							// redirect to planet details page on click
 							onClick={() => handleCardClick(planet.uid)}
-							onKeyDown={(e) => {
-								if (e.key === "Enter" || e.key === " ") {
-									handleCardClick(planet.uid);
-								}
-							}}
 						>
 							{/* Spinner overlay */}
 							{selectedId === planet.uid && (
@@ -57,7 +53,10 @@ export default function PlanetList() {
 								</div>
 							)}
 
+							{/* planet name */}
 							<p className="text-yellow-500">{planet.name}</p>
+
+							{/* planet details */}
 							<PlanetDetails url={planet.url} />
 						</li>
 					))}
